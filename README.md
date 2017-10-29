@@ -1,6 +1,6 @@
-# Windener Theme
+# Connoisseur Theme
 
-Windener is a simple theme for blogging with a gradiented home page, smooth transitions and animations for features like page navigation, share button toggle, and a foldable wrapper for disqus comments.
+Connoisseur is a simple theme for blogging with a gradiented home page, smooth transitions and animations for features like page navigation, share button toggle, and a foldable wrapper for disqus comments.
 
 # Features
 - Reading time display
