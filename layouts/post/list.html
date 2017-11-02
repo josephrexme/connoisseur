@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <main class="list list--gapped">
+    {{ range where .Paginator.Pages "Section" "ne" "" }}
+    <div class="list__item">
+      <div class="list__item__content">
+        <h3><a href='{{ .URL }}'>{{ .LinkTitle }}</a></h3>
+      </div>
+      <footer class="list__footer clearfix">
+        <a href="{{ .URL }}" class="u-fr ellipsized">Read More</a>
+      </footer>
+    </div>
+    {{ end }}
+  </main>
+{{ end }}

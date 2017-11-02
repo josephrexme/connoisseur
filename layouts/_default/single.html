@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="post">
+  <div class="scroll-progress"></div>
+  <div class="wrap">
+    <section class="container">
+      {{ partial "nav.html" . }}
+      <header class="header">
+        <h1 class="post__title">{{ .Title }}</h1>
+      </header>
+      <main>
+        <article class="post__article">
+          {{ .Content }}
+        </article>
+      </main>
+    </section>
+  </div>
+</div>
+
+{{ end }}

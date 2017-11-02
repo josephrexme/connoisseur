@@ -1,0 +1,105 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
+  {{ if .IsHome }}
+  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ else }}
+  <meta name="description" content="{{ .Summary }}">
+  {{ end }}
+  {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ .Hugo.Generator }}
+  <meta property="site_name" content="{{ .Site.DisqusShortname }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .URL | absURL }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:image" content="{{ .Site.Params.banner }}">
+  {{ if .IsHome }}
+  {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+  {{ else }}
+  <meta property="og:description" content="{{ .Summary }}">
+  {{ end }}
+  <meta name="twitter:url" content="{{ .URL | absURL }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ .Site.DisqusShortname }}">
+  <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta name="twitter:img:src" content="{{ .Site.Params.banner }}">
+  {{ if not .IsHome }}
+  <meta name="twitter:label1" content="Author">
+  <meta name="twitter:data1" content="{{ .Site.Params.name }}">
+  <meta name="twitter:label2" content="Published On">
+  <meta name="twitter:data2" content="{{ .Date.Format "January 2, 2006" }}">
+  {{ end }}
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+  <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
+  <link rel="canonical" href="{{ .URL | absURL }}">
+  {{ if .Site.Params.enableRSS }}
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/feed.xml" />
+  {{ end }}
+  {{ if .Site.Params.favicon }}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ .Site.Params.themeColor }}">
+  <meta name="theme-color" content="{{ .Site.Params.themeColor }}">
+  {{ else }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
+  {{ end }}
+  {{ if .Site.Params.themeBuilder }}
+  <link rel="pingback" href="https://webmention.io/josephrex.me/xmlrpc">
+  <link rel="webmention" href="https://webmention.io/josephrex.me/webmention">
+  {{ end }}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "{{ if .IsHome }}Website{{ else }}Article{{ end }}",
+    "description": "{{ .Site.Params.description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Params.name }} Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.banner }}",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.name }}",
+      "url": "{{ .Site.Params.profile }}"
+    },
+    {{ if .Site.Social }}
+    "sameAs": [
+      {{ .Site.Social.twitter }},
+      {{ .Site.Social.linkedin }},
+      {{ .Site.Social.behance }},
+      {{ .Site.Social.codepen }},
+      {{ .Site.Social.github }}
+    ],
+    {{ end }}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .URL | absURL }}"
+    }
+    {{ if not .IsHome }}
+    ,"headline": "{{ .Title }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://dummyimage.com/800x500/011a38/ffffff.jpg&text={{ lower .Title }}",
+      "width": 800,
+      "height": 500
+    }
+    {{ end }}
+    {{ if not .IsHome }}
+    ,"datePublished": "{{ .Date.Format "January 2, 2006" }}",
+    "dateModified": "{{ .Date.Format "January 2, 2006" }}"
+    {{ end }}
+  }
+  </script>
+</head>

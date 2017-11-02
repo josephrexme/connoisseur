@@ -1,0 +1,16 @@
+<footer class="post__footer">
+  <div class="wrap row">
+    <div class="col">
+      {{ if .Paginator.HasPrev }}
+      <h5>{{ .Site.Params.newerPost | default "Newer Post" }}</h5>
+      <a href="{{.Paginator.Prev.URL}}">Recent title</a>
+      {{ end }}
+    </div>
+    <div class="col u-txtright">
+      {{ if .Paginator.HasNext }}
+      <h5>{{ .Site.Params.olderPost | default "Older Post" }}</h5>
+      <a href="{{.Paginator.Next.URL}}">Older title</a>
+      {{ end }}
+    </div>
+  </div>
+</footer>

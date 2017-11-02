@@ -1,0 +1,17 @@
+<nav class="nav row">
+  <div class="col col-10">
+  {{ if .Site.Params.themeBuilder }}
+  <a href="{{ .Site.BaseURL }}"><svg viewBox="0 0 211 143" xmlns="http://www.w3.org/2000/svg" class="nav__logo"><g fill="#192740"><path d="M90.004 94.556h-30v21.063s-29.726 5.279-30-13.063c-.269-17.986 15.449-20.642 28-21 10.544-.301 117 0 117 0s34.323 2.361 35-38c.65-38.811-30.124-42.532-34-43.014-9.82-1.22-56 0-56 0v42.014h30v-16s30.193-4.407 30 13c-.19 17.005-21.217 14.408-30 15-8.783.591-106 0-106 0s-43.504-.035-44 44c-.32 28.314 21.082 45.117 46 43.732.945-.053 44 0 44 0V94.556z"/><path d="M120.004 94.156h30v48.132h-30zM180.004 142.367h30.01l-10.01-55.811s-3.758 7.627-27 9c-.337-.485 7 46.811 7 46.811zM90.004 22.556v21h-30v-21h-30V0h60v22.556z"/></g></svg></a>
+  {{ else }}
+    <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo | absURL }}" class="nav__logo" alt="{{ .Site.Params.name }}"></a>
+  {{ end }}
+  </div>
+  <div class="col">
+    <div class="nav__menu u-fr">
+      {{ range where .Site.RegularPages "Type" "page" }}
+        <a href="{{ .URL }}" class="u-inherit-color">{{ .LinkTitle }}</a>
+      {{ end }}
+    </div>
+  </div>
+</nav>
+

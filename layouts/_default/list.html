@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="post">
+  <div class="wrap">
+    <section class="container">
+      {{ partial "nav.html" . }}
+      <h2>Tag: {{ lower .Title }}</h2>
+      <main>
+        <ul>
+          {{ range where .Paginator.Pages "Section" "ne" "" }}
+              <li><a href='{{ .URL }}'>{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+
+        <h2>All Tags</h2>
+        <div id="theme-tagcloud" class="col-sm-12" style="margin-bottom: 15px;">
+        {{ $tags := $.Site.Taxonomies.tags.ByCount }}
+        {{ $v1 := where $tags "Count" ">=" 3 }}
+        {{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+        {{ range $v2 }}
+        {{ if .Term }}
+        {{ $tagURL := printf "tags/%s" .Term | relURL }}
+        <a href="{{ $tagURL }}" style="text-transform: uppercase; font-size: 14px; padding-right: 5px; padding-left: 5px;" >{{ .Term }} <span class="badge">({{ .Count }})</span></a>
+        {{ end }}
+        {{ end }}
+      </div>
+      </main>
+    </section>
+  </div>
+</div>
+{{ end }}
