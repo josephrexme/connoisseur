@@ -1,0 +1,10 @@
+@keyframes reveal{
+  0%{
+    opacity: 0;
+    transform: skewX(-15deg);
+  }
+  100%{
+    opacity: 1;
+    transform: skewY(0deg);
+  }
+}
