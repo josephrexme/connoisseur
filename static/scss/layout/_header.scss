@@ -1,20 +1,37 @@
 .header{
-  padding: 80px 10px;
-  text-align: center;
-  .logo, &__title, &__description{
-    opacity: 0;
-    animation: fade-in-slow .5s ease-in forwards;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  &__right{
+    text-align: right;
   }
-  .logo{
-    animation-delay: .1s;
-  }
-  &__title{
-    margin-bottom: 20px;
-    animation-delay: .18s;
-  }
-  &__description{
-    color: rgba($white, .6);
-    font-size: 2rem;
-    animation-delay: .25s;
+  &__navigation{
+    font-size: 1.8rem;
+    a{
+      display: inline-block;
+      &::before, &::after{
+        display: inline-block;
+        opacity: 0;
+        transition: transform .3s, opacity .2s;
+      }
+      &::before{
+        content: '[';
+        margin-right: 1rem;
+        transform: translate(2rem);
+      }
+      &::after{
+        content: ']';
+        margin-left: 1rem;
+        transform: translate(-2rem);
+      }
+      &:hover, &:focus{
+        &::before, &::after{
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+    }
+    :last-child{
+      margin-left: 2rem;
+    }
   }
 }

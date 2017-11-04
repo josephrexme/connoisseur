@@ -1,0 +1,53 @@
+.portfolio{
+  &__intro{
+    margin: 10rem 0;
+  }
+  &__works{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 5rem 0;
+  }
+  &__showcase{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__item{
+    padding: 4rem 5rem;
+  }
+  &__links{
+    padding: 0 5rem;
+    h6 a{
+      display: inline-block;
+      position: relative;
+      transition: transform .3s ease-in-out .1s;
+      &::after{
+        content: '';
+        position: absolute;
+        top: .65em;
+        opacity: .2;
+        width: 7rem;
+        margin-left: 1rem;
+        border-bottom: solid thin #000;
+        transform: scaleX(.71);
+        transition: opacity .2s ease .1s, transform .3s ease-in-out .1s;
+      }
+      &:hover, &:focus{
+        transform: translate(-1rem);
+        &::after{
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  &__nav{
+    padding-top: 4rem;
+    a{
+      opacity: .4;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}

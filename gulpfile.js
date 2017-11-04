@@ -6,8 +6,6 @@ const $ = gulpLoadPlugins();
 const paths = {
   source: {
     scripts: [
-      'static/js/vendor/barba.min.js',
-      'static/js/vendor/web-animations.min.js',
       'static/js/vendor/prism.js',
       'static/js/src/main.js',
     ],

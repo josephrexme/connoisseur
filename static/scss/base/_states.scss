@@ -9,7 +9,7 @@
   chaining before considering it.
 \*---------------------------------*/
 .is{
-  &-opened-sharelinks.is-opened-sharelinks{
-    transform: translateY(0) scaleY(1);
+  &-active-portfolio.is-active-portfolio{
+    opacity: 1;
   }
 }

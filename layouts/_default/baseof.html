@@ -2,6 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}" prefix="og: http://ogp.me/ns#">
   {{ partial "head.html" . }}
   <body>
+    {{ partial "header.html" . }}
     {{ block "main" . -}}{{- end }}
 
     {{ partial "footer.html" . }}
