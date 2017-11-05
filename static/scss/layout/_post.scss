@@ -1,2 +1,20 @@
 .post{
+  &__header{
+    margin: 10rem 0;
+    text-align: center;
+    opacity: 0;
+    animation: fadein .5s ease-in forwards;
+    p{
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+  }
+  &__title{
+    margin-bottom: 3rem;
+  }
+  main{
+    font-size: 1.8rem;
+    transform: translateY(30rem);
+    animation: slideup .6s ease-in forwards;
+  }
 }
