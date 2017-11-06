@@ -1,72 +1,69 @@
 {{ define "main" }}
+
 <div class="post" data-disqus="{{ .Site.DisqusShortname }}">
 
   <div class="scroll-progress"></div>
 
   <div class="wrap">
-    <section class="container">
-      <header class="post__header">
-        <h2 class="post__title">{{ .Title }}</h2>
-        <p>Published <time>{{ .Date.Format "January 2, 2006" }}</time></p>
-        {{ $rt := .ReadingTime }}
-        <p>Estimated Reading Time: {{ $rt }} minute{{if gt $rt 1}}s{{end}}</p>
-      </header>
-      <main>
-        <article class="post__article">
-          {{ .Content }}
-          <div class="post__actions row row-no-padding">
-            <div class="col">
-              <div class="tags tags--page">
-                {{ with .Params.tags }}
-                  {{ if ge (len .) 1 }}
-                    {{ range . }}
-                      <a href="{{ printf "tags/%s" (. | urlize) | absURL }}">{{ . }}</a>
-                    {{ end }}
+    <header class="post__header">
+      <h2 class="post__title">{{ .Title }}</h2>
+      <p>Published <time>{{ .Date.Format "January 2, 2006" }}</time></p>
+      {{ $rt := .ReadingTime }}
+      <p>Estimated Reading Time: {{ $rt }} minute{{if gt $rt 1}}s{{end}}</p>
+    </header>
+    <main>
+      <article class="post__article">
+        {{ .Content }}
+        <div class="post__actions">
+          <div class="col">
+            <div class="tags tags--page">
+              {{ with .Params.tags }}
+                {{ if ge (len .) 1 }}
+                  {{ range . }}
+                    <a href="{{ printf "tags/%s" (. | urlize) | absURL }}">{{ . }}</a>
                   {{ end }}
-                {{ end}}
-              </div>
+                {{ end }}
+              {{ end}}
             </div>
-            <div class="col u-txtright">
-              <div class="post__actions__action" id="shareDropdown">
-                <div class="post__sharelinks">
-                  <a title="Share on Facebook" aria-label="Share on Facebook" href="https://facebook.com/sharer/sharer.php?u={{.Permalink}}" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Facebook</a>
-                  <a title="Share on Twitter" aria-label="Share on Twitter" href="https://twitter.com/intent/tweet/?text={{.Title }}&url={{.Permalink}}&via=josephrexme" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-show-count="false">Twitter</a>
-                </div>
-                Share
+          </div>
+          <div class="u-txtright">
+            <div class="post__actions__action">
+              <div class="post__sharelinks">
+                <a title="Share on Facebook" aria-label="Share on Facebook" href="https://facebook.com/sharer/sharer.php?u={{.Permalink}}" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Share on Facebook</a>
+                <a title="Share on Twitter" aria-label="Share on Twitter" href="https://twitter.com/intent/tweet/?text={{.Title }}&url={{.Permalink}}&via=josephrexme" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-show-count="false">Share on Twitter</a>
               </div>
             </div>
           </div>
-          <!-- Comments Section -->
-          <div class="comments">
-            <div class="comments__triggre js-toggleComments">
-              <span class="comments__trigger__plus"></span>
-              <p>Toggle Comments</p>
-            </div>
-            <div id="disqus_thread" style="display: none"></div>
+        </div>
+        <!-- Comments Section -->
+        <div class="comments">
+          <div class="comments__triggre js-toggleComments">
+            <span class="comments__trigger__plus"></span>
+            <p>Toggle Comments</p>
           </div>
-          <!-- end comments -->
-        </article>
-      </main>
-    </section>
+          <div id="disqus_thread" style="display: none"></div>
+        </div>
+        <!-- end comments -->
+      </article>
+    </main>
   </div>
 
-  <footer class="post__footer">
-    <div class="wrap row">
-      <div class="col">
-        {{ if .Prev }}
-          <h5>Newer Post</h5>
-          <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
-        {{ end }}
-      </div>
-      <div class="col u-txtright">
-        {{ if .Next }}
-          <h5>Older Post</h5>
-          <a href="{{.Next.Permalink}}">{{.Next.Title}}</a>
-        {{ end }}
-      </div>
+  <footer class="post__footer wrap">
+    <div>
+      {{ if .Prev }}
+        <h5>Newer Post</h5>
+        <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
+      {{ end }}
+    </div>
+    <div class="u-txtright">
+      {{ if .Next }}
+        <h5>Older Post</h5>
+        <a href="{{.Next.Permalink}}">{{.Next.Title}}</a>
+      {{ end }}
     </div>
   </footer>
 
 </div>
+{{ partial "js.html" . }}
 
 {{ end }}

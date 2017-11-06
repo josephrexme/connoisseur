@@ -13,6 +13,9 @@
     opacity: 0;
     transform: translateY(30rem);
   }
+  80%{
+    opacity: 0.4;
+  }
   100%{
     opacity: 1;
     transform: translateY(0);

@@ -12,5 +12,8 @@ function ready(cb) {
     : cb();
 }
 ready(function(){
-  console.log('Hey there')
+  // Highlight with Prism
+  Prism.highlightAll();
+  // Typeset MathJax
+  // MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
 });

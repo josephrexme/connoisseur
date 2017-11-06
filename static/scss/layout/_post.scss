@@ -12,6 +12,10 @@
   &__title{
     margin-bottom: 3rem;
   }
+  &__footer, &__actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   main{
     font-size: 1.8rem;
     transform: translateY(30rem);
