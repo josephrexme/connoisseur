@@ -29,3 +29,8 @@
     opacity: 1;
   }
 }
+@keyframes blink{
+  0%{
+    transform: scaleY(.1);
+  }
+}

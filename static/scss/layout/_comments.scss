@@ -1,6 +1,16 @@
 .comments{
   margin: 2rem 0;
+  padding: 2rem 0;
   border-top: solid medium #000;
   border-bottom: solid medium #000;
   text-align: center;
+  &__trigger{
+    margin: 1rem 0 !important;
+    cursor: pointer;
+  }
+  &__animate{
+    --origin: top;
+    animation: blink 2s ease-in-out;
+    transform-origin: var(--origin);
+  }
 }

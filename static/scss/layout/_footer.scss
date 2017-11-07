@@ -4,7 +4,6 @@
   align-items: end;
   margin: 10rem 0 5rem;
   font-family: monospace;
-  font-size: 1.8rem;
   @include breakpoint(768px){
     grid-template-columns: 1fr 1fr;
   }
