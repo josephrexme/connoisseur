@@ -15,32 +15,27 @@
       <article class="post__article">
         {{ .Content }}
         <div class="post__actions">
-          <div class="col">
+          <div>
             <div class="tags tags--page">
               {{ with .Params.tags }}
                 {{ if ge (len .) 1 }}
                   {{ range . }}
-                    <a href="{{ printf "tags/%s" (. | urlize) | absURL }}">{{ . }}</a>
+                    <a class="no-uline" href="{{ printf "tags/%s" (. | urlize) | absURL }}">{{ . }}</a>
                   {{ end }}
                 {{ end }}
               {{ end}}
             </div>
           </div>
           <div class="u-txtright">
-            <div class="post__actions__action">
-              <div class="post__sharelinks">
-                <a title="Share on Facebook" aria-label="Share on Facebook" href="https://facebook.com/sharer/sharer.php?u={{.Permalink}}" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Share on Facebook</a>
-                <a title="Share on Twitter" aria-label="Share on Twitter" href="https://twitter.com/intent/tweet/?text={{.Title }}&url={{.Permalink}}&via=josephrexme" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-show-count="false">Share on Twitter</a>
-              </div>
+            <div class="post__sharelinks">
+              <a href="https://facebook.com/sharer/sharer.php?u={{.Permalink}}" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Share on Facebook</a>
+              <a href="https://twitter.com/intent/tweet/?text={{.Title }}&url={{.Permalink}}&via=josephrexme" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-show-count="false">Share on Twitter</a>
             </div>
           </div>
         </div>
         <!-- Comments Section -->
         <div class="comments">
-          <div class="comments__triggre js-toggleComments">
-            <span class="comments__trigger__plus"></span>
-            <p>Toggle Comments</p>
-          </div>
+          <p id="js-toggleComments">Toggle Comments</p>
           <div id="disqus_thread" style="display: none"></div>
         </div>
         <!-- end comments -->

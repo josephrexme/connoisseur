@@ -28,17 +28,18 @@ body{
 }
 blockquote{
   position: relative;
-  padding: 10px 40px;
-  background: darken(#fff, 2%);
-  border-left: solid 2px rgba($color-brand-2, .7);
+  margin: 0 1rem;
+  padding: 1rem 4rem;
+  background: darken(#fff, 1%);
+  border-left: solid thick #444;
   font-weight: 300;
   &::before{
     content: '“';
     position: absolute;
-    top: -20px;
-    left: 10px;
+    top: -2rem;
+    left: 1rem;
     font-size: 8rem;
-    color: $color-brand-2;
+    color: #333;
   }
 }
 cite{

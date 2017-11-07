@@ -16,6 +16,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  &__actions{
+    margin: 5rem 0;
+    font-size: 1.4rem;
+  }
+  &__sharelinks a{
+    margin-left: 1rem;
+  }
   main{
     font-size: 1.8rem;
     transform: translateY(30rem);
