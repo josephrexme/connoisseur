@@ -1,2 +1,4 @@
-<!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_CHTML"></script> -->
+{{ if .Params.math }}
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_CHTML"></script>
+{{ end }}
 <script src="{{ "js/app.js" | absURL }}"></script>

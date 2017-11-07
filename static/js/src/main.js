@@ -12,8 +12,18 @@ function ready(cb) {
     : cb();
 }
 ready(function(){
+  // Progressive reading indicator
+  var indicator = document.querySelector('.scroll-progress');
+  if(indicator){
+    document.addEventListener('scroll', function(e) {
+      var dh = document.body.scrollHeight;
+      var wh = window.innerHeight;
+      var pos = window.scrollY;
+      var footerHeight = 590;
+      var perc = pos / (dh - footerHeight - wh) * 100;
+      indicator.style.setProperty('--scale', (perc / 100));
+    })
+  }
   // Highlight with Prism
   Prism.highlightAll();
-  // Typeset MathJax
-  // MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
 });
