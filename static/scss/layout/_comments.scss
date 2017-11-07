@@ -1,16 +1,27 @@
 .comments{
   margin: 2rem 0;
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: solid medium #000;
-  border-bottom: solid medium #000;
   text-align: center;
+  overflow: hidden;
   &__trigger{
+    position: relative;
+    z-index: 100;
     margin: 1rem 0 !important;
     cursor: pointer;
   }
+  &__content{
+    margin-top: 2.5rem;
+    border-bottom: solid medium #000;
+    transform: translateY(-100%);
+    transition: transform 1s cubic-bezier(.5,0,0,.99);
+    overflow: hidden;
+  }
+  &__thread{
+    transform: translateY(120%);
+    transition: inherit;
+  }
   &__animate{
-    --origin: top;
-    animation: blink 2s ease-in-out;
-    transform-origin: var(--origin);
+    transform: none;
   }
 }
