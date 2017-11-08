@@ -12,6 +12,7 @@ function ready(cb) {
     : cb();
 }
 ready(function(){
+  var disqusContainer = document.getElementById('disqus_thread');
   // Progressive reading indicator
   var indicator = document.querySelector('.scroll-progress');
   if(indicator){
@@ -38,6 +39,12 @@ ready(function(){
       document.querySelector('.comments__thread').classList.toggle('comments__animate');
       document.querySelector('.comments__content').classList.toggle('comments__animate');
       disqusComments();
+      console.log(disqusContainer.clientHeight);
+      if(disqusContainer.clientHeight > 0){
+        disqusContainer.style.display = 'none';
+      }else{
+        disqusContainer.style.display = 'block';
+      }
     });
   };
 
