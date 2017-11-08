@@ -3,8 +3,8 @@ license = "MIT"
 licenselink = "https://github.com/josephrexme/connoiseur/blob/master/LICENSE.md"
 description = "A minimalist blog theme with portfolio"
 homepage = "https://github.com/josephrexme/connoiseur"
-tags = ["blog", "animation", "prism syntax highlighting"]
-features = ["syntax highlighting", "blog", "pagination", "sharing options", "Reading Time", "Read progress", "word count"]
+tags = ["blog", "animation", "minimalist"]
+features = ["syntax highlighting", "blog", "pagination", "sharing options", "Reading Time", "Read progress", "custom 404"]
 min_version = 0.20
 
 [author]
