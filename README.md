@@ -17,12 +17,12 @@ Connoisseur is a minimalist Hugo theme. Comes with a portfolio as part of the bl
 
 Homepage
 
-![Screenshot](https://cdn.rawgit.com/josephrexme/windener/60018193/images/screenshot.png)
+![Screenshot](https://cdn.rawgit.com/josephrexme/connoisseur/ff2d9855/screenshot/screenshot.png)
 
 
 Single post page
 
-![Blog screenshot](https://cdn.rawgit.com/josephrexme/windener/3d1a6529/images/screenshot-single.png)
+![Blog screenshot](https://cdn.rawgit.com/josephrexme/connoisseur/ff2d9855/screenshot/screenshot-single.png)
 
 
 ## Installation
