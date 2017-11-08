@@ -32,6 +32,10 @@
   <meta name="twitter:label2" content="Published On">
   <meta name="twitter:data2" content="{{ .Date.Format "January 2, 2006" }}">
   {{ end }}
+  {{ if .Site.GoogleAnalytics }}
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+  {{ end }}
   <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
   <link rel="canonical" href="{{ .URL | absURL }}">
   {{ if .Site.Params.enableRSS }}
