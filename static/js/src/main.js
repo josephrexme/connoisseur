@@ -41,9 +41,9 @@ ready(function(){
       disqusComments();
       console.log(disqusContainer.clientHeight);
       if(disqusContainer.clientHeight > 0){
-        disqusContainer.style.display = 'none';
+        disqusContainer.style.height = 0;
       }else{
-        disqusContainer.style.display = 'block';
+        disqusContainer.style.height = 'auto';
       }
     });
   };
