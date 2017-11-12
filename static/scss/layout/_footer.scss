@@ -1,12 +1,9 @@
 .footer{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: end;
   margin: 10rem 0 5rem;
   font-family: monospace;
-  @include breakpoint(768px){
-    grid-template-columns: 1fr 1fr;
-  }
   &__heading{
     margin-top: 3rem;
   }
@@ -17,14 +14,14 @@
   }
   &__right{
     order: 1;
-    @include breakpoint(768px){
+    @include breakpoint(720px){
       order: 2;
       text-align: right;
     }
   }
   &__left{
     order: 2;
-    @include breakpoint(768px){
+    @include breakpoint(720px){
       order: 1;
     }
     p{

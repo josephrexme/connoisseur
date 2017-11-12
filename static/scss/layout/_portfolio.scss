@@ -12,12 +12,8 @@
   }
   &__showcase{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 5rem 10rem;
-    @include breakpoint(680px){
-      grid-template-rows: repeat(2, auto);
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
   &__item{
     opacity: 0;
@@ -33,7 +29,7 @@
     &:nth-of-type(5){
       order: 6;
     }
-    @include breakpoint(680px){
+    @include breakpoint(700px){
       &:nth-of-type(5){
         order: 5;
       }

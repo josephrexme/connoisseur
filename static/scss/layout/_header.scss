@@ -1,8 +1,8 @@
 .header{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  &__right{
-    text-align: right;
+  display: flex;
+  justify-content: space-between;
+  > div{
+    flex: 0 1 auto;
   }
   &__navigation{
     font-size: 1.8rem;
@@ -29,9 +29,6 @@
           transform: translate(0);
         }
       }
-    }
-    :last-child{
-      margin-left: 2rem;
     }
   }
 }
