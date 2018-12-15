@@ -6,6 +6,9 @@ hr{
   color: #333;
   text-align: center;
   overflow: inherit;
+  .dark-theme &{
+    color: #ddd;
+  }
   &::after{
     content: '✯ ✯ ✯';
     display: inline-block;
