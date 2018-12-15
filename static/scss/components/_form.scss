@@ -21,9 +21,17 @@ button{
   background: #000;
   color: white;
   line-height: 1;
+  .dark-theme &{
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+  }
 }
 ::-webkit-input-placeholder{
   color: rgba(#000, .3);
+  .dark-theme &{
+    color: rgba(#fff, .3);
+  }
 }
 ::placeholder{
   color: rgba(#000, .3);

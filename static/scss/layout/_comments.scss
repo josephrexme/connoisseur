@@ -17,6 +17,12 @@
     transition: transform 1s cubic-bezier(.5,0,0,.99);
     overflow: hidden;
   }
+  .dark-theme &{
+    border-color: #fff;
+    &__content{
+      border-color: #fff;
+    }
+  }
   &__thread{
     transform: translateY(120%);
     transition: inherit;

@@ -37,10 +37,13 @@
         .content.replace(' ', '-');
       };
       commentTrigger.addEventListener('click', function() {
+        var commentState = commentTrigger.dataset.comments;
+        var newState = commentState === 'show' ? 'hide' : 'show';
+        commentTrigger.setAttribute('data-comments', newState);
+        commentTrigger.textContent = newState + ' comments';
         document.querySelector('.comments__thread').classList.toggle('comments__animate');
         document.querySelector('.comments__content').classList.toggle('comments__animate');
         disqusComments();
-        console.log(disqusContainer.clientHeight);
         if(disqusContainer.clientHeight > 0){
           disqusContainer.style.height = 0;
         }else{

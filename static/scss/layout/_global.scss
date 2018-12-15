@@ -23,8 +23,12 @@ body{
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
-  background: $background;
-  color: $text-color;
+  background: $background-primary;
+  color: $color-primary-text;
+  &.dark-theme{
+    background: $background-secondary;
+    color: $color-secondary-text;
+  }
 }
 blockquote{
   position: relative;
@@ -49,7 +53,10 @@ cite{
   }
 }
 a{
-  color: $color-links;
+  color: rgba(black, .7);
+  .dark-theme &{
+    color: rgba(white, .7);
+  }
   text-decoration: none;
   &:not(.no-uline){
     background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
@@ -82,6 +89,9 @@ code {
   padding: 1px 5px;
   border-radius: $inputs-border-radius;
   background-color: darken(#fff, 6%);
+  .dark-theme &{
+    background-color: lighten(#000, 6%);
+  }
 }
 
 pre {
@@ -104,6 +114,10 @@ pre {
     line-height: 30px;
     font-size: .8em;
     color: #ddd;
+    .dark-theme &{
+      background: linear-gradient(#2f2f2f 50%, #0f0f0f 0);
+      background-size: 100% 60px;
+    }
   }
 }
 .wrap{
@@ -121,4 +135,8 @@ pre {
 .logo{
   width: 5rem;
   height: 5rem;
+  fill: #000;
+  .dark-theme &{
+    fill: #fff;
+  }
 }

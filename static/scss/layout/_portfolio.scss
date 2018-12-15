@@ -1,6 +1,10 @@
 .portfolio{
   &__intro{
-    margin: 10rem 0;
+    margin: 5rem 0;
+    h1{ font-weight: bold }
+    @include breakpoint(720px) {
+      margin: 10rem 0;
+    }
   }
   &__works{
     display: grid;
@@ -55,6 +59,11 @@
         border-bottom: solid thin #000;
         transform: scaleX(.71);
         transition: opacity .2s ease .1s, transform .3s ease-in-out .1s;
+      }
+      .dark-theme &{
+        &::after{
+          border-color: #eee;
+        }
       }
       &:hover, &:focus{
         transform: translate(-1rem);

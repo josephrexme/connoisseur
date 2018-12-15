@@ -28,6 +28,11 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+.dark-theme code[class*="language-"],
+.dark-theme pre[class*="language-"] {
+  background: none;
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
