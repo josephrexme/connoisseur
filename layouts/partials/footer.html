@@ -48,13 +48,15 @@ else window.addEventListener('load', loadDeferredStyles);
 </script>
 <script>
   // Toggle Dark/Light Theme
-  var chosenTheme = localStorage.getItem('theme');
+  var chosenTheme;
+  chosenTheme = localStorage.getItem('theme');
   if(chosenTheme) {
     document.body.classList.toggle('dark-theme');
   }
   var themeSwitcher = document.getElementById('themeToggle');
   themeSwitcher.addEventListener('click', function() {
     document.body.classList.toggle('dark-theme');
+    chosenTheme = localStorage.getItem('theme');
     if(chosenTheme){
       localStorage.removeItem('theme');
     } else {
