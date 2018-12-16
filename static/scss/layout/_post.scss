@@ -46,8 +46,12 @@
   width: 100%;
   height: .5rem;
   background: #000;
-  box-shadow: 0 0 4px rgba(#fff, .6);
+  box-shadow: 0 0 .4rem rgba(#fff, .6);
   transform: scaleX(var(--scale));
   transform-origin: left;
   transition: transform .2s linear;
+  .dark-theme &{
+    background: #fff;
+    box-shadow: 0 0 .4rem rgba(#000, .6);
+  }
 }
