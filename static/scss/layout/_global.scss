@@ -47,6 +47,12 @@ blockquote{
     font-size: 8rem;
     color: #333;
   }
+  .dark-theme &{
+    background: lighten(#000, 15%);
+    &::before{
+      color: #ddd;
+    }
+  }
 }
 cite{
   display: block;
@@ -78,6 +84,9 @@ input{
 dfn, abbr{
   border-bottom: dashed thin #222;
   text-decoration: none;
+  .dark-theme &{
+    border-color: #ccc;
+  }
 }
 b, strong{
   font-weight: 600;
