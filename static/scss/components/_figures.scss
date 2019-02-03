@@ -9,9 +9,20 @@ figure{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  img{
+  > img{
     display: block;
     margin: 0 auto;
+  }
+}
+.figure--multiple{
+  width: 100%;
+  display: flex;
+  div{
+    flex: 1;
+    margin: 0 .2rem;
+  }
+  img{
+    width: 100%;
   }
 }
 .image{
