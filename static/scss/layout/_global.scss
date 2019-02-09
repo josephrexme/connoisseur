@@ -119,16 +119,11 @@ pre {
   }
   &:not(.line-pre){
     padding: 0 1.2rem;
-    background: linear-gradient(#2f2f2f 50%, darken(#2f2f2f, 5%) 0);
-    background-size: 100% 60px;
+    background: #121212;
     border-radius: $inputs-border-radius;
     line-height: 30px;
     font-size: .8em;
     color: #ddd;
-    .dark-theme &{
-      background: linear-gradient(#2f2f2f 50%, #0f0f0f 0);
-      background-size: 100% 60px;
-    }
   }
 }
 .wrap{
