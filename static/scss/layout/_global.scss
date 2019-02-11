@@ -99,10 +99,7 @@ em{
 code {
   padding: 1px 5px;
   border-radius: $inputs-border-radius;
-  background-color: darken(#fff, 6%);
-  .dark-theme &{
-    background-color: lighten(#000, 6%);
-  }
+  background-color: rgba(#000, .3);
 }
 
 pre {
@@ -119,7 +116,7 @@ pre {
   }
   &:not(.line-pre){
     padding: 0 1.2rem;
-    background: #121212;
+    background: #151515;
     border-radius: $inputs-border-radius;
     line-height: 30px;
     font-size: .8em;
