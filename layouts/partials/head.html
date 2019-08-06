@@ -9,10 +9,10 @@
   <meta name="description" content="{{ .Summary }}">
   {{ end }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   <meta property="site_name" content="{{ .Site.DisqusShortname }}">
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-  <meta property="og:url" content="{{ .URL | absURL }}">
+  <meta property="og:url" content="{{ .Permalink | absURL }}">
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta property="og:image" content="{{ .Site.Params.banner }}">
   {{ if .IsHome }}
@@ -21,7 +21,7 @@
   <meta property="og:description" content="{{ .Summary }}">
   {{ end }}
   <meta name="p:domain_verify" content="573587fd2211caf338169f0ea205345d"/>
-  <meta name="twitter:url" content="{{ .URL | absURL }}">
+  <meta name="twitter:url" content="{{ .Permalink | absURL }}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@{{ .Site.DisqusShortname }}">
   <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
@@ -37,7 +37,7 @@
   <link rel="preconnect" href="//www.google-analytics.com" as="script">
   <link rel="preconnect" href="//stats.g.doubleclick.net" as="script">
   {{ end }}
-  <link rel="canonical" href="{{ .URL | absURL }}">
+  <link rel="canonical" href="{{ .Permalink | absURL }}">
   {{ if .Site.Params.enableRSS }}
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/feed.xml" />
   {{ end }}
@@ -89,7 +89,7 @@
     {{ end }}
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "{{ .URL | absURL }}"
+      "@id": "{{ .Permalink | absURL }}"
     }
     {{ if not .IsHome }}
     ,"headline": "{{ .Title }}",

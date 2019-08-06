@@ -6,7 +6,7 @@
       <main>
         <ul>
           {{ range where .Paginator.Pages "Section" "ne" "" }}
-              <li><a href='{{ .URL }}'>{{ .LinkTitle }}</a></li>
+              <li><a href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
           {{ end }}
         </ul>
 

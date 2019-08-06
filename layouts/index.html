@@ -16,10 +16,10 @@
     <div class="portfolio__showcase">
       {{ range where .Paginator.Pages "Section" "post" }}
       <div class="portfolio__item">
-        <h4><a href="{{ .URL }}">{{ .LinkTitle }}</a></h4>
+        <h4><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h4>
         {{ .Summary }}
         <p>
-        <small><a href="{{ .URL }}">Read more ››</a></small>
+        <small><a href="{{ .Permalink }}">Read more ››</a></small>
         </p>
       </div>
       {{ end }}
@@ -34,12 +34,12 @@
       <div class="portfolio__links u-txtright">
         <div class="paginate" aria-label="pagination">
           {{ if .Paginator.HasPrev }}
-            <a href="{{.Paginator.Prev.URL}}" class="paginate__previous">&lsaquo;</a>
+            <a href="{{.Paginator.Prev.URL}}" class="paginate__previous" aria-label=Previous>&lsaquo;</a>
           {{ else }}
             <span class="paginate__previous" aria-disabled="true">&lsaquo;</span>
           {{ end }}
           {{ if .Paginator.HasNext }}
-            <a href="{{.Paginator.Next.URL}}" class="paginate__next">&rsaquo;</a>
+            <a href="{{.Paginator.Next.URL}}" class="paginate__next" aria-label="Next">&rsaquo;</a>
           {{ else }}
             <span class="paginate__next" aria-disabled="true">&rsaquo;</span>
           {{ end }}
