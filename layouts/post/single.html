@@ -46,16 +46,16 @@
   </div>
 
   <footer class="post__footer wrap">
-    <div>
-      {{ if .Prev }}
-        <h5>Newer Post</h5>
-        <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
-      {{ end }}
-    </div>
     <div class="u-txtright">
       {{ if .Next }}
-        <h5>Older Post</h5>
+        <h5>Newer Post</h5>
         <a href="{{.Next.Permalink}}">{{.Next.Title}}</a>
+      {{ end }}
+    </div>
+    <div>
+      {{ if .Prev }}
+        <h5>Older Post</h5>
+        <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
       {{ end }}
     </div>
   </footer>
