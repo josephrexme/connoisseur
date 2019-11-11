@@ -56,14 +56,9 @@
         opacity: .2;
         width: 7rem;
         margin-left: 1rem;
-        border-bottom: solid thin #000;
+        border-bottom: solid thin var(--portfolio-links-color);
         transform: scaleX(.71);
         transition: opacity .2s ease .1s, transform .3s ease-in-out .1s;
-      }
-      .dark-theme &{
-        &::after{
-          border-color: #eee;
-        }
       }
       &:hover, &:focus{
         transform: translate(-1rem);

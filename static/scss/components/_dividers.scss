@@ -3,12 +3,9 @@ hr{
   margin: 5rem auto;
   padding: 0;
   border: 0;
-  color: #333;
+  color: var(--divider-color);
   text-align: center;
   overflow: inherit;
-  .dark-theme &{
-    color: #ddd;
-  }
   &::after{
     content: '✯ ✯ ✯';
     display: inline-block;

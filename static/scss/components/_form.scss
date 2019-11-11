@@ -16,29 +16,21 @@ button{
   height: 3rem;
   margin-left: -1.2rem;
   padding: .5rem 1rem;
-  border: solid thin #000;
+  border: solid thin var(--form-button-border);
   border-radius: 0;
-  background: #000;
-  color: white;
+  background: var(--form-button-bg);
+  color: var(--form-button-text);
   line-height: 1;
-  .dark-theme &{
-    border-color: #fff;
-    background: #fff;
-    color: #000;
-  }
 }
 ::-webkit-input-placeholder{
-  color: rgba(#000, .3);
-  .dark-theme &{
-    color: rgba(#fff, .3);
-  }
+  color: var(--form-placeholder-text);
 }
 ::placeholder{
-  color: rgba(#000, .3);
+  color: var(--form-placeholder-text);
 }
 ::-moz-placeholder{
-  color: rgba(#000, .3);
+  color: var(--form-placeholder-text);
 }
 :-ms-input-placeholder{
-  color: rgba(#000, .3);
+  color: var(--form-placeholder-text);
 }

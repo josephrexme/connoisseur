@@ -25,15 +25,9 @@
     line-height: .85;
   }
   span.paginate__previous, span.paginate__next{
-    color: rgba(#000, .2);
-    .dark-theme &{
-      color: rgba(#fff, .2);
-    }
+    color: var(--pagination-span);
   }
   a.paginate__previous, a.paginate__next{
-    color: rgba(#000, .6);
-    .dark-theme &{
-      color: rgba(#fff, .6);
-    }
+    color: var(--pagination-link);
   }
 }

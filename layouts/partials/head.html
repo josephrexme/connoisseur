@@ -27,6 +27,7 @@
   <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta name="twitter:img:src" content="{{ .Site.Params.banner }}">
+  <meta name="supported-color-schemes" content="light dark">
   {{ if not .IsHome }}
   <meta name="twitter:label1" content="Author">
   <meta name="twitter:data1" content="{{ .Site.Params.name }}">
@@ -104,6 +105,11 @@
     ,"datePublished": "{{ .Date.Format "January 2, 2006" }}",
     "dateModified": "{{ .Date.Format "January 2, 2006" }}"
     {{ end }}
+  }
+  </script>
+  <script>
+  if(localStorage.getItem('theme')) {
+    document.documentElement.classList.add('theme-active');
   }
   </script>
 </head>
