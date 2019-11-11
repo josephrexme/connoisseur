@@ -13,16 +13,22 @@
 }
 .theme-active{
   @include dark-theme-config;
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
 }
 @media (prefers-color-scheme: dark){
   :root{
     @include dark-theme-config;
   }
-  .theme-active{
-    @include light-theme-config;
-  }
   img {
     filter: brightness(.8) contrast(1.2);
+  }
+  .theme-active{
+    @include light-theme-config;
+    img{
+      filter: none;
+    }
   }
 }
 ::selection{
