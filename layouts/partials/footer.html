@@ -15,7 +15,7 @@
     {{ with .Site.Params.copyright }}
       {{ . | markdownify }}
     {{ else }}
-    © {{ now.Format "2006" }} {{ .Site.Params.name }}. Powered by <a href="https://gohugo.io">Hugo</a> and hosted on <a href="https://www.netlify.com">Netlify</a>
+    © 2014 - {{ now.Format "2006" }} {{ .Site.Params.name }}. Powered by <a href="https://gohugo.io">Hugo</a> and hosted on <a href="https://www.netlify.com">Netlify</a>
     {{ end }}
     </p>
   </div>
