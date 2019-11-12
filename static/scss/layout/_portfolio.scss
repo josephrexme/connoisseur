@@ -25,7 +25,16 @@
   }
   &__item{
     opacity: 0;
-    animation: reveal .6s ease-in forwards;
+    animation: reveal 1s cubic-bezier(.5, 0, .5, 1) forwards;
+    &:nth-of-type(2) {
+      animation-delay: .5s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 1.2s;
+    }
+    &:nth-of-type(4) {
+      animation-delay: 1.5s;
+    }
     img{
       width: 100%;
     }
