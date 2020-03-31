@@ -2,13 +2,13 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  > div{
-    flex: 0 1 auto;
-  }
   &__navigation{
     font-size: 1.8rem;
+    text-align: right;
     a{
-      display: inline-block;
+      display: block;
+      margin-bottom: 1rem;
+      margin-right: -1rem;
       &::before, &::after{
         display: inline-block;
         opacity: 0;
@@ -30,12 +30,15 @@
           transform: translate(0);
         }
       }
+      @include breakpoint(720px) {
+        display: inline-block;
+      }
     }
   }
   &__themes{
     position: absolute;
     top: -3rem;
-    right: -1rem;
+    right: 1vw;
     opacity: 1 !important;
     cursor: pointer;
     fill: #000;

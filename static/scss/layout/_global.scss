@@ -71,7 +71,7 @@ a{
     background-size: 0 .3rem;
     background-position: 0 1em;
     background-repeat: no-repeat;
-    transition: background-size .5s ease-in-out .1s;
+    transition: background-size .3s cubic-bezier(.5,0,.5,1) .1s;
     &:hover, &:focus{
       background-size: 100% .3rem;
     }

@@ -25,7 +25,8 @@
   }
   &__item{
     opacity: 0;
-    animation: reveal .6s ease-in forwards;
+    transform: skewX(-15deg);
+    animation: reveal .3s cubic-bezier(.5,0,.5,1) forwards;
     img{
       width: 100%;
     }

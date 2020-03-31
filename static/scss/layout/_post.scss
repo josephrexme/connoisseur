@@ -3,7 +3,8 @@
     margin: 10rem 0;
     text-align: center;
     opacity: 0;
-    animation: fadein .5s ease-in forwards;
+    transform: scaleX(0.2);
+    animation: expand .5s cubic-bezier(.5,0,.5,1) forwards;
     p{
       font-size: 1.8rem;
       font-weight: 300;
@@ -26,8 +27,9 @@
   }
   main{
     font-size: 1.8rem;
-    transform: translateY(30rem);
-    animation: slideup .6s ease-in forwards;
+    transform: translateY(5rem) scaleX(0.9);
+    transform-origin: bottom;
+    animation: slideup .3s cubic-bezier(.5,0,.5,1) forwards;
   }
   article p{
     margin: 3rem 0;

@@ -1,31 +1,18 @@
 @keyframes reveal{
-  0%{
-    opacity: 0;
-    transform: skewX(-15deg);
-  }
   100%{
     opacity: 1;
     transform: skewY(0deg);
   }
 }
 @keyframes slideup{
-  0%{
-    opacity: 0;
-    transform: translateY(30rem);
-  }
-  80%{
-    opacity: 0.4;
-  }
   100%{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scaleX(1);
   }
 }
-@keyframes fadein{
-  0%{
-    opacity: 0;
-  }
+@keyframes expand{
   100%{
     opacity: 1;
+    transform: scaleX(1);
   }
 }
