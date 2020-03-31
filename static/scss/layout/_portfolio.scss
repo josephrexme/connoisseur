@@ -28,13 +28,13 @@
     transform: skewX(-15deg);
     animation: reveal .3s cubic-bezier(.5,0,.5,1) forwards;
     &:nth-of-type(2) {
-      animation-delay: .5s;
+      animation-delay: .2s;
     }
     &:nth-of-type(3) {
-      animation-delay: 1.2s;
+      animation-delay: .2s;
     }
     &:nth-of-type(4) {
-      animation-delay: 1.5s;
+      animation-delay: .3s;
     }
     img{
       width: 100%;
