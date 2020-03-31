@@ -27,6 +27,7 @@
   <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta name="twitter:img:src" content="{{ .Site.Params.banner }}">
+  <meta name="supported-color-schemes" content="light dark">
   {{ if not .IsHome }}
   <meta name="twitter:label1" content="Author">
   <meta name="twitter:data1" content="{{ .Site.Params.name }}">
@@ -43,6 +44,11 @@
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/feed.xml" />
   {{ end }}
   {{ if .Site.Params.favicon }}
+  <script>
+  if(localStorage.getItem('theme')) {
+    document.documentElement.classList.add('theme-active');
+  }
+  </script>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

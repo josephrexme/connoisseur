@@ -8,6 +8,29 @@
     outline-width: thin;
   }
 }
+:root{
+  @include light-theme-config;
+}
+.theme-active{
+  @include dark-theme-config;
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    @include dark-theme-config;
+  }
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+  .theme-active{
+    @include light-theme-config;
+    img{
+      filter: none;
+    }
+  }
+}
 ::selection{
   background: #f0f0f0;
 }
@@ -25,18 +48,14 @@ body{
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
-  background: $background-primary;
-  color: $color-primary-text;
-  &.dark-theme{
-    background: $background-secondary;
-    color: $color-secondary-text;
-  }
+  background: var(--background-color);
+  color: var(--foreground-color);
 }
 blockquote{
   position: relative;
   margin: 0 1rem;
   padding: 1rem 4rem;
-  background: darken(#fff, 1%);
+  background: rgba(black, .05);
   border-left: solid thick #444;
   font-weight: 300;
   &::before{
@@ -45,13 +64,7 @@ blockquote{
     top: -2rem;
     left: 1rem;
     font-size: 8rem;
-    color: #333;
-  }
-  .dark-theme &{
-    background: lighten(#000, 15%);
-    &::before{
-      color: #ddd;
-    }
+    color: var(--blockquote-quote);
   }
 }
 cite{
@@ -61,10 +74,7 @@ cite{
   }
 }
 a{
-  color: rgba(black, .7);
-  .dark-theme &{
-    color: rgba(white, .7);
-  }
+  color: var(--link-color);
   text-decoration: none;
   &:not(.no-uline){
     background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
@@ -82,11 +92,8 @@ input{
 }
 
 dfn, abbr{
-  border-bottom: dashed thin #222;
+  border-bottom: dashed thin var(--abbr-border-color);
   text-decoration: none;
-  .dark-theme &{
-    border-color: #ccc;
-  }
 }
 b, strong{
   font-weight: 600;
@@ -138,8 +145,5 @@ pre {
 .logo{
   width: 5rem;
   height: 5rem;
-  fill: #000;
-  .dark-theme &{
-    fill: #fff;
-  }
+  fill: var(--logo-fill);
 }

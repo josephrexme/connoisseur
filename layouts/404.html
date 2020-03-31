@@ -76,7 +76,7 @@ function glitch(){
 }
 
 function drawText(){
-  const isDarkTheme = document.body.classList.contains('dark-theme');
+  const isDarkTheme = (!document.documentElement.classList.contains('theme-active') && matchMedia('(prefers-color-scheme: dark)').matches) || (document.documentElement.classList.contains('theme-active') && !matchMedia('(prefers-color-scheme: dark)').matches);
   context.font = "normal 150px Impact";
   context.fillStyle = isDarkTheme ? "#ffffff" : "#000000";
   context.textAlign = "center";

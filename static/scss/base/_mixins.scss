@@ -1,4 +1,44 @@
 // Mixins
+@mixin light-theme-config {
+  --background-color: #fff;
+  --foreground-color: #222;
+  --link-color: rgba(0, 0, 0, .7);
+  --logo-fill: #000;
+  --abbr-border-color: #222;
+  --blockquote-quote: #333;
+  --scroll-progress-bg: #000;
+  --scroll-progress-shadow: rgba(255, 255, 255, .6);
+  --comments-border: #000;
+  --theme-switcher: #000;
+  --portfolio-links-color: #000;
+  --divider-color: #333;
+  --form-button-bg: #000;
+  --form-button-border: #000;
+  --form-button-text: #fff;
+  --form-placeholder-text: rgba(0,0,0, .3);
+  --pagination-link: rgba(0, 0, 0, .6);
+  --pagination-span: rgba(0, 0, 0, .2);
+}
+@mixin dark-theme-config {
+  --background-color: #222;
+  --foreground-color: #eee;
+  --link-color: rgba(255, 255, 255, .7);
+  --logo-fill: #fff;
+  --abbr-border-color: #ccc;
+  --blockquote-quote: #ddd;
+  --scroll-progress-bg: #fff;
+  --scroll-progress-shadow: rgba(0, 0, 0, .6);
+  --comments-border: #fff;
+  --theme-switcher: #fff;
+  --portfolio-links-color: #eee;
+  --divider-color: #ddd;
+  --form-button-bg: #fff;
+  --form-button-border: #fff;
+  --form-button-text: #000;
+  --form-placeholder-text: rgba(255,255,255, .3);
+  --pagination-link: rgba(255, 255, 255, .6);
+  --pagination-span: rgba(255, 255, 255, .2);
+}
 
 // Makes Ellipsis on Single Line
 @mixin ellipsis-line($width){

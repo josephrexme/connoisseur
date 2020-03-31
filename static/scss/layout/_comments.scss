@@ -1,7 +1,7 @@
 .comments{
   margin: 2rem 0;
   padding: 1rem 0;
-  border-top: solid medium #000;
+  border-top: solid medium var(--comments-border);
   text-align: center;
   overflow: hidden;
   &__trigger{
@@ -12,16 +12,10 @@
   }
   &__content{
     margin-top: 2.5rem;
-    border-bottom: solid medium #000;
+    border-bottom: solid medium var(--comments-border);
     transform: translateY(-100%);
     transition: transform 1s cubic-bezier(.5,0,0,.99);
     overflow: hidden;
-  }
-  .dark-theme &{
-    border-color: #fff;
-    &__content{
-      border-color: #fff;
-    }
   }
   &__thread{
     transform: translateY(120%);

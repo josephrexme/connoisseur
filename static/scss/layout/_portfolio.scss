@@ -27,6 +27,15 @@
     opacity: 0;
     transform: skewX(-15deg);
     animation: reveal .3s cubic-bezier(.5,0,.5,1) forwards;
+    &:nth-of-type(2) {
+      animation-delay: .5s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 1.2s;
+    }
+    &:nth-of-type(4) {
+      animation-delay: 1.5s;
+    }
     img{
       width: 100%;
     }
@@ -57,14 +66,9 @@
         opacity: .2;
         width: 7rem;
         margin-left: 1rem;
-        border-bottom: solid thin #000;
+        border-bottom: solid thin var(--portfolio-links-color);
         transform: scaleX(.71);
         transition: opacity .2s ease .1s, transform .3s ease-in-out .1s;
-      }
-      .dark-theme &{
-        &::after{
-          border-color: #eee;
-        }
       }
       &:hover, &:focus{
         transform: translate(-1rem);
