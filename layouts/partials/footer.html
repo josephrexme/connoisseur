@@ -2,21 +2,21 @@
   <div class="footer__left">
     <h4 class="footer__heading">Subscribe to my newsfeed</h4>
     <p>Prefer RSS feed? <a href="https://www.josephrex.me/feed.xml">Follow link</a></p>
-    <!-- For MailChimp -->
-    <div id="mc_embed_signup">
-      <form action="//josephrex.us10.list-manage.com/subscribe/post?u=727d4403f160030f0e6c6c818&amp;id=9dade596c2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
+    <!-- For Newsletter -->
+    <div>
+      <form action="https://app.convertkit.com/forms/1423820/subscriptions" method="post" class="validate form"
+        target="_blank" novalidate>
         <label for="EMAIL" class="u-visuallyhidden">Email address</label>
-        <input type="text" class="feed form__input" name="EMAIL" id="EMAIL" placeholder="Email Address">
-        <div style="position: absolute; left: -5000px;"><input type="text" name="b_727d4403f160030f0e6c6c818_9dade596c2" tabindex="-1" value="" aria-hidden="true"></div>
+        <input type="email" class="feed form__input" name="email_address" id="EMAIL" placeholder="Email Address">
         <button>&rarr;</button>
       </form>
     </div>
     <p>
-    {{ with .Site.Params.copyright }}
-      {{ . | markdownify }}
-    {{ else }}
-    © 2014 - {{ now.Format "2006" }} {{ .Site.Params.name }}. Powered by <a href="https://gohugo.io">Hugo</a> and hosted on <a href="https://www.netlify.com">Netlify</a>
-    {{ end }}
+      {{ with .Site.Params.copyright }} {{ . | markdownify }} {{ else }} © 2014
+      - {{ now.Format "2006" }} {{ .Site.Params.name }}. Powered by
+      <a href="https://gohugo.io">Hugo</a> and hosted on
+      <a href="https://www.netlify.com">Netlify</a>
+      {{ end }}
     </p>
   </div>
   <div class="footer__right">
@@ -24,7 +24,9 @@
       <div><a href="{{ .Site.Social.twitter }}" rel="noopener">Twitter</a></div>
       <div><a href="{{ .Site.Social.dribbble }}" rel="noopener">Dribbble</a></div>
       <div><a href="{{ .Site.Social.github }}" rel="noopener">Github</a></div>
-      <div><a href="{{ .Site.Social.linkedin }}" rel="noopener">LinkedIn</a></div>
+      <div>
+        <a href="{{ .Site.Social.linkedin }}" rel="noopener">LinkedIn</a>
+      </div>
       <div><a href="{{ .Site.Social.codepen }}" rel="noopener">CodePen</a></div>
       <div><a href="{{ .Site.Social.patreon }}" rel="noopener">Patreon</a></div>
     </div>
@@ -33,9 +35,9 @@
 <script>
   // Toggle Dark/Light Theme
   var themeSwitcher = document.getElementById('themeToggle');
-  themeSwitcher.addEventListener('click', function() {
+  themeSwitcher.addEventListener('click', function () {
     document.documentElement.classList.toggle('theme-active');
-    if(localStorage.getItem('theme')){
+    if (localStorage.getItem('theme')) {
       localStorage.removeItem('theme');
     } else {
       localStorage.setItem('theme', 'active');
@@ -44,11 +46,13 @@
 </script>
 <script>
   // Google Analytics
-  if(navigator.userAgent.indexOf('Speed Insights') === -1 && !(/localhost/.test(window.location.host))){
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  if (navigator.userAgent.indexOf('Speed Insights') === -1 && !(/localhost/.test(window.location.host))) {
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
     ga('send', 'pageview');
