@@ -4,7 +4,7 @@
     <p>Prefer RSS feed? <a href="https://www.josephrex.me/feed.xml">Follow link</a></p>
     <!-- For Newsletter -->
     <div>
-      <form action="https://app.convertkit.com/forms/1423820/subscriptions" method="post" class="validate form"
+      <form action="https://app.convertkit.com/forms/{{ .Site.Params.ckformid }}/subscriptions" method="post" class="validate form"
         target="_blank" novalidate>
         <label for="EMAIL" class="u-visuallyhidden">Email address</label>
         <input type="email" class="feed form__input" name="email_address" id="EMAIL" placeholder="Email Address">
