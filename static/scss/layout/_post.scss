@@ -3,8 +3,9 @@
     margin: 10rem 0;
     text-align: center;
     opacity: 0;
-    transform: scaleX(0.2);
-    animation: expand .5s cubic-bezier(.5,0,.5,1) forwards;
+    transform: scaleX(0.8);
+    transform-origin: center bottom;
+    animation: expand .2s cubic-bezier(.5,0,.5,1) forwards;
     p{
       font-size: 1.8rem;
       font-weight: 300;
@@ -52,4 +53,5 @@
   transform: scaleX(var(--scale));
   transform-origin: left;
   transition: transform .2s linear;
+  will-change: transform;
 }
