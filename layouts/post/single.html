@@ -8,10 +8,10 @@
     <header class="post__header">
       <h2 class="post__title">{{ .Title }}</h2>
       <p>
-        <span>Published:</span>
+        <strong>Published:</strong>
         <time>{{ .Date.Format "January 2, 2006" }}</time>
         &middot;
-        <span>Last updated:</span>
+        <strong>Last updated:</strong>
         <time>{{ .Page.Lastmod.Format "January 2, 2006" }}</time>
       </p>
       {{ $rt := .ReadingTime }}
