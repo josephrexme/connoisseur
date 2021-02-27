@@ -15,7 +15,7 @@
         <time>{{ .Page.Lastmod.Format "January 2, 2006" }}</time>
       </p>
       {{ $rt := .ReadingTime }}
-      <p>Estimated Reading Time: {{ $rt }} minute{{if gt $rt 1}}s{{end}}</p>
+      <p><strong>Estimated Reading Time:</strong> {{ $rt }} minute{{if gt $rt 1}}s{{end}}</p>
     </header>
     <main>
       <article class="post__article">
