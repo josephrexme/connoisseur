@@ -1,11 +1,11 @@
 <footer class="footer">
   <div class="footer__left">
-    <h4 class="footer__heading">Subscribe to my newsfeed</h4>
+    <h4 class="footer__heading">Subscribe to my newsletter</h4>
     <p>Prefer RSS feed? <a href="https://www.josephrex.me/feed.xml">Follow link</a></p>
     <!-- For Newsletter -->
     <div>
       <form action="https://app.convertkit.com/forms/{{ .Site.Params.ckformid }}/subscriptions" method="post" class="validate form"
-        target="_blank" novalidate>
+        target="_blank" data-uid="624a8f5da4" data-format="inline" data-version="5" data-sv-form="{{ .Site.Params.ckformid }}" novalidate>
         <label for="EMAIL" class="u-visuallyhidden">Email address</label>
         <input type="email" class="feed form__input" name="email_address" id="EMAIL" placeholder="Email Address">
         <button>&rarr;</button>

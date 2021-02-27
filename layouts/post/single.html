@@ -7,7 +7,13 @@
   <div class="wrap">
     <header class="post__header">
       <h2 class="post__title">{{ .Title }}</h2>
-      <p>Published <time>{{ .Date.Format "January 2, 2006" }}</time></p>
+      <p>
+        <span>Published:</span>
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+        &middot;
+        <span>Last updated:</span>
+        <time>{{ .Page.Lastmod.Format "January 2, 2006" }}</time>
+      </p>
       {{ $rt := .ReadingTime }}
       <p>Estimated Reading Time: {{ $rt }} minute{{if gt $rt 1}}s{{end}}</p>
     </header>
