@@ -53,15 +53,15 @@
 
   <footer class="post__footer wrap">
     <div>
-      {{ if .Next }}
+      {{ if .NextInSection }}
         <h5>Newer Post</h5>
-        <a href="{{.Next.Permalink}}">{{.Next.Title}}</a>
+        <a href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}}</a>
       {{ end }}
     </div>
     <div class="u-txtright">
-      {{ if .Prev }}
+      {{ if .PrevInSection }}
         <h5>Older Post</h5>
-        <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
+        <a href="{{.PrevInSection.Permalink}}">{{.PrevInSection.Title}}</a>
       {{ end }}
     </div>
   </footer>

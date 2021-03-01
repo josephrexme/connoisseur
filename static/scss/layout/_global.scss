@@ -77,9 +77,10 @@ a{
   color: var(--link-color);
   text-decoration: none;
   &:not(.no-uline){
+    padding: 4px 0 4px;
     background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
     background-size: 0 .3rem;
-    background-position: 0 1em;
+    background-position: 0 100%;
     background-repeat: no-repeat;
     transition: background-size .3s cubic-bezier(.5,0,.5,1) .1s;
     &:hover, &:focus{
