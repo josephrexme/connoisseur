@@ -1,18 +1,24 @@
 .comments{
-  margin: 2rem 0;
-  padding: 1rem 0;
-  border-top: solid medium var(--comments-border);
+  border-top: solid thin var(--comments-border);
   text-align: center;
   overflow: hidden;
   &__trigger{
+    appearance: none;
+    display: block;
     position: relative;
     z-index: 100;
-    margin: 1rem 0 !important;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    padding: 2.4rem 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    outline: none;
     cursor: pointer;
   }
   &__content{
-    margin-top: 2.5rem;
-    border-bottom: solid medium var(--comments-border);
+    border-bottom: solid thin var(--comments-border);
     transform: translateY(-100%);
     transition: transform 1s cubic-bezier(.5,0,0,.99);
     overflow: hidden;

@@ -20,8 +20,15 @@
     grid-template-columns: 1fr 1fr;
   }
   &__actions{
-    margin: 5rem 0;
+    margin: 5rem 0 2rem;
     font-size: 1.4rem;
+    > *{
+      display: flex;
+      align-items: center;
+    }
+    > :last-child{
+      justify-content: flex-end;
+    }
   }
   &__sharelinks a{
     margin-left: 1rem;

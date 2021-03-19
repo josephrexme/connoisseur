@@ -14,6 +14,11 @@
   }
   ready(function(){
     var disqusContainer = document.getElementById('disqus_thread');
+    var commentThread = document.getElementById('threadContent')
+    if(commentThread) {
+      commentThread.style.setProperty('position', 'absolute')
+      commentThread.style.setProperty('opacity', 0)
+    }
     // Progressive reading indicator
     var indicator = document.querySelector('.scroll-progress');
     if(indicator){
@@ -37,17 +42,25 @@
         .content.replace(' ', '-');
       };
       commentTrigger.addEventListener('click', function() {
-        var commentState = commentTrigger.dataset.comments;
-        var newState = commentState === 'show' ? 'hide' : 'show';
-        commentTrigger.setAttribute('data-comments', newState);
-        commentTrigger.textContent = newState + ' comments';
+        var commentExpanded = commentTrigger.getAttribute('aria-expanded');
+        var newAction = commentExpanded === 'false' ? 'hide' : 'show';
+        commentTrigger.setAttribute('aria-expanded', commentExpanded === 'true' ? false : true);
+        commentTrigger.textContent = newAction + ' comments';
         document.querySelector('.comments__thread').classList.toggle('comments__animate');
         document.querySelector('.comments__content').classList.toggle('comments__animate');
         disqusComments();
-        if(disqusContainer.clientHeight > 0){
-          disqusContainer.style.height = 0;
-        }else{
+        if(commentExpanded === 'false'){
+          if(commentThread) {
+            commentThread.style.setProperty('position', 'static')
+            commentThread.style.setProperty('opacity', 1)
+          }
           disqusContainer.style.height = 'auto';
+        }else{
+          if(commentThread) {
+            commentThread.style.setProperty('position', 'absolute')
+            commentThread.style.setProperty('opacity', 0)
+          }
+          disqusContainer.style.height = 0;
         }
       });
     };
