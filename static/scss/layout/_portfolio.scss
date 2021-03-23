@@ -1,9 +1,15 @@
 .portfolio{
   &__intro{
     margin: 5rem 0;
-    h1{ font-weight: bold }
+    h1{
+      font-weight: 700;
+      font-size: 4rem;
+    }
     @include breakpoint(720px) {
       margin: 10rem 0;
+      h1{
+        font-size: 7rem;
+      }
     }
   }
   &__works{

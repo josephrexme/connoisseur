@@ -13,6 +13,11 @@
   }
   &__title{
     margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 4.5rem;
+    @media(min-width: 720px) {
+      font-size: 8rem;
+    }
   }
   &__footer, &__actions{
     position: relative;
@@ -44,7 +49,6 @@
   }
   a{
     color: #517dd4;
-    font-weight: 300;
   }
 }
 .scroll-progress{
