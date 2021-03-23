@@ -128,11 +128,8 @@ pre {
   }
   &:not(.line-pre){
     padding: 0 1.2rem;
-    background: #151515;
-    border-radius: $inputs-border-radius;
     line-height: 30px;
     font-size: .8em;
-    color: #ddd;
   }
 }
 .wrap{
