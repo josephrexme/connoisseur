@@ -47,6 +47,20 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+// Gap with fallback for Safari
+@mixin gap($space) {
+  gap: $space;
+  @media not all and (min-resolution:.001dpcm){
+    @supports (-webkit-appearance:none) {
+      margin-bottom: -$space;
+      > *{
+        padding-bottom: $space;
+      }
+    }
+  }
+}
+
 // Gradients
 @mixin gradient-dark-linear{
   background-image: -webkit-linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));

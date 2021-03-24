@@ -6,7 +6,11 @@
   {{ if .IsHome }}
   {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
   {{ else }}
-  <meta name="description" content="{{ .Summary }}">
+    {{ if .Page.Description }}
+    {{ with .Page.Description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ else }}
+    <meta name="description" content="{{ .Summary }}">
+    {{ end }}
   {{ end }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
   {{ hugo.Generator }}

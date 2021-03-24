@@ -1,4 +1,6 @@
 .tags{
+  display: flex;
+  @include gap(10px);
   a{
     display: inline-block;
     position: relative;
