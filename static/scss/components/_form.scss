@@ -1,26 +1,40 @@
 .form{
   margin: 1rem 0;
+  display: grid;
+  -ms-grid-columns: 22rem 1fr;
+  grid-template-columns: 22rem 10rem;
   * { outline: none; }
   &__input{
     width: 100%;
-    max-width: 22rem;
-    height: 3rem;
+    height: 4rem;
     padding: .5rem 1rem;
     border: solid thin currentColor;
-    border-radius: $inputs-border-radius;
+    border-radius: 4px 0 0 4px;
     background: transparent;
+  }
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:hover, 
+  &__input:-webkit-autofill:focus, 
+  &__input:-webkit-autofill:active
+  {
+  -webkit-box-shadow: 0 0 0 30px var(--background-color) inset !important;
   }
 }
 button{
   vertical-align: top;
-  height: 3rem;
-  margin-left: -1.2rem;
+  height: 4rem;
   padding: .5rem 1rem;
   border: solid thin var(--form-button-border);
-  border-radius: 0;
-  background: var(--form-button-bg);
-  color: var(--form-button-text);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background: transparent;
+  transition: background-color .3s ease-in-out, color .3s ease;
+  color: inherit;
   line-height: 1;
+  &:hover{
+    background-color: var(--form-button-border);
+    color: var(--form-button-text);
+  }
 }
 ::-webkit-input-placeholder{
   color: var(--form-placeholder-text);
