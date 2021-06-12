@@ -8,7 +8,6 @@ Connoisseur is a minimalist Hugo theme. Comes with a portfolio as part of the bl
 - Syntax highlight with [prism](//prismjs.com)
 - Animated reading progress
 - Supports for RSS feeds
-- Disqus Comments
 - Google Analytics
 - Sharing options
 - JSONLD Schema for page SEO
@@ -41,7 +40,7 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 The [example config](https://github.com/josephrexme/connoisseur/blob/master/exampleSite/config.toml) can be copied to the root of your hugo folder directory. Customize the configurations as you wish.
 
-**Logo** and **Favicon** could be changed from the config file. You could also add username for **disqus**, **google analytics** code. Feel free to [file an issue](https://github.com/josephrexme/connoisseur/issues).
+**Logo** and **Favicon** could be changed from the config file. You could also add username for **google analytics** code and all social media with **shortname**. Feel free to [file an issue](https://github.com/josephrexme/connoisseur/issues).
 
 ## License
 

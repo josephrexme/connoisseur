@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="post" data-disqus="{{ .Site.DisqusShortname }}">
+<div class="post">
 
   <div class="scroll-progress"></div>
 
@@ -39,24 +39,11 @@
             </div>
           </div>
         </div>
-        <!-- <div class="u-txtcenter" style="opacity: .6; font-size: 1.4rem">
+        <div class="u-txtcenter" style="opacity: .6; font-size: 1.4rem">
           {{ $likesPath := "https://webmention.io/api/mentions.jf2?target=https://www.josephrex.me%s&wm-property=like-of" }}
           {{ $likes := getJSON (printf $likesPath .RelPermalink) }}
           {{ len $likes.children }} twitter {{ cond (eq (len $likes.children) 1) "like" "likes" }}
-        </div> -->
-        <!-- Comments Section -->
-        <div class="comments">
-          <button id="toggleComments" class="comments__trigger" aria-controls="disqus_thread" aria-expanded="false">show comments</button>
-          <div class="comments__content">
-            <div id="disqus_thread" class="comments__thread">
-              <!-- <div id="threadContent">
-                <h1>New yourk</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odio minus veritatis consectetur placeat voluptate aspernatur, omnis tenetur magnam! Nulla aut laborum numquam in, pariatur accusantium, veniam repudiandae quod dignissimos dolorum nihil recusandae ut incidunt itaque dolore aliquid, porro sint ipsum distinctio quam doloremque sit iusto? Natus ratione deleniti enim quae numquam fugiat impedit voluptatem porro et quo officia suscipit nulla, sequi quam iure sint repellat ipsam beatae eligendi? Repudiandae, voluptas libero! Ad reiciendis, libero necessitatibus nam perspiciatis dolorum nemo blanditiis vitae. Quam suscipit nihil repellendus. Quas quo eius ullam.</p>
-              </div> -->
-            </div>
-          </div>
         </div>
-        <!-- end comments -->
       </article>
     </main>
   </div>

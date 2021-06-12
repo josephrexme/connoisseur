@@ -14,7 +14,7 @@
   {{ end }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
   {{ hugo.Generator }}
-  <meta property="site_name" content="{{ .Site.DisqusShortname }}">
+  <meta property="site_name" content="{{ .Site.Params.username }}">
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
   <meta property="og:url" content="{{ .Permalink | absURL }}">
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
@@ -27,8 +27,8 @@
   <meta name="p:domain_verify" content="573587fd2211caf338169f0ea205345d"/>
   <meta name="twitter:url" content="{{ .Permalink | absURL }}">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@{{ .Site.DisqusShortname }}">
-  <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
+  <meta name="twitter:site" content="@{{ .Site.Params.username }}">
+  <meta name="twitter:creator" content="@{{ .Site.Params.username }}">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta name="twitter:img:src" content="{{ .Site.Params.banner }}">
   <meta name="color-scheme" content="light dark">
