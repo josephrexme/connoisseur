@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<div class="post">
+
+  <div class="scroll-progress"></div>
+
+  <div class="wrap">
+    <header class="post__header">
+      <h1 class="post__title">{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </header>
+    <main>
+      <article class="post__article">
+        {{ .Content }}
+      </article>
+    </main>
+  </div>
+
+  <footer class="post__footer wrap">
+    <div>
+      {{ if .NextInSection }}
+        <h5>Newer Post</h5>
+        <a href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}}</a>
+      {{ end }}
+    </div>
+    <div class="u-txtright">
+      {{ if .PrevInSection }}
+        <h5>Older Post</h5>
+        <a href="{{.PrevInSection.Permalink}}">{{.PrevInSection.Title}}</a>
+      {{ end }}
+    </div>
+  </footer>
+
+</div>
+{{ partial "js.html" . }}
+
+{{ end }}

@@ -1,0 +1,6 @@
+<nav class="portfolio__nav">
+  <p>{{ $currPageTitle := .Title }}</p>
+  {{ range where .Site.Pages "Section" .Section }}
+    <h3><a href="{{ .Permalink }}" class="{{ if eq .Title $currPageTitle }}is-active-portfolio{{ end }}">{{ .Title }}</a>
+  {{ end }}
+</nav>

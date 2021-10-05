@@ -1,14 +1,46 @@
 {{ define "main" }}
-  <main class="list list--gapped">
-    {{ range where .Paginator.Pages "Section" "ne" "" }}
-    <div class="list__item">
-      <div class="list__item__content">
-        <h3><a href='{{ .Permalink }}'>{{ .LinkTitle }}</a></h3>
+
+<div class="portfolio">
+
+  {{ partial "intro.html" . }}
+
+  <div class="portfolio__works">
+    {{ partial "section-navigation" . }}
+    <div class="portfolio__showcase">
+      {{ range where .Paginator.Pages "Section" "post" }}
+      <div class="portfolio__item">
+        <h4><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h4>
+        {{ .Summary }}
+        <p>
+        <small><a href="{{ .Permalink }}">Read more ››</a></small>
+        </p>
       </div>
-      <footer class="list__footer clearfix">
-        <a href="{{ .Permalink }}" class="u-fr ellipsized">Read More</a>
-      </footer>
+      {{ end }}
+      <div class="portfolio__links">
+        <h6>
+          <a href="https://x-team.com/blog/author/joseph" rel="noopener" class="no-uline">Articles on X-Team</a>
+        </h6>
+        <h6>
+          <a href="http://resources.infosecinstitute.com/author/joseph-rex" rel="noopener" class="no-uline">Articles on Infosec Institute</a>
+        </h6>
+      </div>
+      <div class="portfolio__links u-txtright">
+        <div class="paginate" aria-label="pagination">
+          {{ if .Paginator.HasPrev }}
+            <a href="{{.Paginator.Prev.URL}}" class="paginate__previous" aria-label=Previous>&lsaquo;</a>
+          {{ else }}
+            <span class="paginate__previous" aria-disabled="true">&lsaquo;</span>
+          {{ end }}
+          {{ if .Paginator.HasNext }}
+            <a href="{{.Paginator.Next.URL}}" class="paginate__next" aria-label="Next">&rsaquo;</a>
+          {{ else }}
+            <span class="paginate__next" aria-disabled="true">&rsaquo;</span>
+          {{ end }}
+        </div>
+      </div>
     </div>
-    {{ end }}
-  </main>
+  </div>
+
+</div>
+
 {{ end }}

@@ -4,7 +4,12 @@
 
   {{ partial "intro.html" . }}
 
-  {{ .Content }}
+  <div class="portfolio__works">
+    {{ partial "section-navigation" . }}
+    <div class="portfolio__showcase">
+      {{ .Content }}
+    </div>
+  </div>
 
 </div>
 
